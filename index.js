@@ -92,7 +92,7 @@ Use the addFlavor function below to do the following:
 //use .unshift() to add a flavor to the front of the array 
 //return the resulting array 
 function addFlavor(array, flavor){
- array.push(flavor)
+ array.unshift(flavor)
    return array
  
 }
@@ -108,13 +108,14 @@ Use the removeLastFlavor function below to do the following:
 
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
-//i paramter: array
+//i parameter: array
 //we will use the .pop(no argument here) method to remove the last item in the array 
 //return the array 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
+  array.pop()
+  return array
 }
-
+console.log('task 4', removeLastFlavor(originalFlavors))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -130,10 +131,11 @@ Use the getFlavorByIndex function below to do the following:
 //2 parameters: array, index
 //for example, if I passed in orginal flavors and 2, we would want to return originalFlavors[2]
 //Return array[index]
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
-}
 
+function getFlavorByIndex(array, i){
+  return array[i]
+}
+console.log('task 5', getFlavorByIndex(originalFlavors, 2))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -149,12 +151,21 @@ Use the removeFlavorByName function below to do the following:
 
   HINT: You can use .splice() for this
 */
+
 //2 parameters: array, index
 //We need to loop through the array, then write a conditional that checks to see if the index matches the given flavor, if it does remove it, then return the array 
 //Use the guided project for help with this one
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+
+function removeFlavorByName(array, flavor){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === flavor){
+      array.splice(i, 1)
+    }
+  }
+  return array;
 }
+
+console.log('task 6', removeFlavorByName(originalFlavors, 'Rocky Road'))
 
 
 
