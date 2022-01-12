@@ -191,9 +191,17 @@ Use the filterByWord function below to do the following:
 //2 parameters: array, string
 //use includes, and remember that it is case sensitive 
 //create a new array called filtered array (leave it empty), then loop through the original array and check each item, if the item includes the string, we want to push it to the filtered array outside of the for loop we want to return the filtered array 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, flavor){
+  const filteredArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].includes(flavor)){
+      filteredArray.push(array[i])
+    }
+  }
+  return filteredArray
 }
+
+console.log('task 7', filterByWord(originalFlavors, 'Chocolate'));
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
